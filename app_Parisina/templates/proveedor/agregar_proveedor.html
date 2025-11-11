@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+  <div class="card-header-accent">
+    <h5 class="mb-0">Agregar Proveedor</h5>
+  </div>
+  <div class="card-body">
+    <form method="post">
+      {% csrf_token %}
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label class="form-label">Nombre de la empresa</label>
+          <input name="nombre_empresa" class="form-control" placeholder="Ej. Textiles ABC">
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Contacto</label>
+          <input name="contacto" class="form-control" placeholder="Nombre del contacto">
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Correo</label>
+          <input name="correo" type="email" class="form-control" placeholder="correo@ejemplo.com">
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Teléfono</label>
+          <input name="telefono" class="form-control" placeholder="55 1234 5678">
+        </div>
+        <div class="col-12">
+          <label class="form-label">Dirección</label>
+          <input name="direccion" class="form-control" placeholder="Calle, colonia, número">
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">País</label>
+          <input name="pais" class="form-control" placeholder="México">
+        </div>
+      </div>
+
+      <div class="mt-3">
+        <button class="btn btn-primary">Guardar Proveedor</button>
+        <a href="{% url 'ver_proveedor' %}" class="btn btn-outline-secondary">Cancelar</a>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

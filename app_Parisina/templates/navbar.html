@@ -1,0 +1,67 @@
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <!-- LOGO SVG inline: rojo, negro y detalle amarillo -->
+      <a class="navbar-brand" href="{% url 'inicio_parisina' %}">
+        <span class="brand-logo" aria-hidden="true">
+          <!-- SVG simple y limpio -->
+          <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" class="d-block" width="36" height="36" role="img" aria-label="Logo Parisina">
+            <!-- fondo círculo negro -->
+            <circle cx="32" cy="32" r="32" fill="#111111"/>
+            <!-- P estilizada en rojo -->
+            <path d="M20 44 L20 18 L36 18 C42 18 46 22 46 28 C46 34 42 38 36 38 L28 38 L28 44 Z" fill="#C8102E"/>
+            <!-- detalle amarillo -->
+            <rect x="40" y="12" width="6" height="6" rx="1" fill="#F7E300" />
+          </svg>
+        </span>
+        Sistema de Administración Parisina
+      </a>
+  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item me-2">
+            <a class="nav-link" href="{% url 'inicio_parisina' %}">
+              <i class="bi bi-house-door-fill"></i> Inicio
+            </a>
+          </li>
+  
+          <!-- CLIENTE -->
+          <li class="nav-item dropdown me-2">
+            <a class="nav-link dropdown-toggle" href="#" id="clienteMenu" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-people-fill"></i> Cliente
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="clienteMenu">
+              <li><a class="dropdown-item" href="{% url 'agregar_cliente' %}">Agregar Cliente</a></li>
+              <li><a class="dropdown-item" href="{% url 'ver_cliente' %}">Ver Cliente</a></li>
+            </ul>
+          </li>
+  
+          <li class="nav-item dropdown me-2">
+          <a class="nav-link dropdown-toggle" href="#" id="salasMenu" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-door-open-fill"></i> Proveedor
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="proveedorMenu">
+            <li><a class="dropdown-item" href="{% url 'agregar_proveedor' %}">Agregar Proveedor</a></li>
+            <li><a class="dropdown-item" href="{% url 'ver_proveedor' %}">Ver Proveedor</a></li>
+          </ul>
+        </li>
+  
+          <!-- PRODUCTO -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="prodMenu" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-box-seam"></i> Producto
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="prodMenu">
+              <li><a class="dropdown-item" href="{% url 'agregar_producto' %}">Agregar Producto</a></li>
+              <li><a class="dropdown-item" href="{% url 'ver_producto' %}">Ver Producto</a></li>
+            </ul>
+          </li>
+  
+        </ul>
+      </div>
+    </div>
+  </nav>
+  

@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+  <div class="card-header-accent d-flex justify-content-between align-items-center">
+    <h5 class="mb-0">Proveedores</h5>
+    <a href="{% url 'agregar_proveedor' %}" class="btn btn-warning">+ Agregar Proveedor</a>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-striped align-middle">
+        <thead>
+          <tr>
+            <th>Empresa</th>
+            <th>Contacto</th>
+            <th>Correo</th>
+            <th>Teléfono</th>
+            <th>País</th>
+            <th>Registrado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for p in proveedores %}
+          <tr>
+            <td>{{ p.nombre_empresa }}</td>
+            <td>{{ p.contacto }}</td>
+            <td>{{ p.correo }}</td>
+            <td>{{ p.telefono }}</td>
+            <td>{{ p.pais }}</td>
+            <td>{{ p.fecha_registro }}</td>
+            <td>
+              <a class="btn btn-sm btn-outline-primary" href="{% url 'actualizar_proveedor' p.pk %}">Ver / Editar</a>
+              <a class="btn btn-sm btn-outline-danger" href="{% url 'borrar_proveedor' p.pk %}">Borrar</a>
+            </td>
+          </tr>
+          {% empty %}
+          <tr><td colspan="7" class="text-center">No hay proveedores registrados</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}
